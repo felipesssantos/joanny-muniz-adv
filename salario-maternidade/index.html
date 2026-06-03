@@ -10,92 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Carmen+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --cor-primaria: #4B2436; 
-            --cor-secundaria: #7E3840; 
-            --cor-dourado: #CFA461; 
-            --cor-fundo: #FAFAFA;
-            --cor-texto: #333333;
-            --cor-botao-wpp: #25D366; 
-            --cor-botao-wpp-hover: #1EBE5D;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Carmen Sans', sans-serif; background-color: var(--cor-fundo); color: var(--cor-texto); line-height: 1.6; }
-        h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 700; }
-        img { max-width: 100%; height: auto; display: block; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        .btn-wpp {
-            display: inline-block;
-            background-color: var(--cor-botao-wpp);
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.1rem;
-            padding: 18px 32px;
-            border-radius: 8px;
-            text-align: center;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            width: 100%;
-            max-width: 450px;
-        }
-        .btn-wpp:hover { background-color: var(--cor-botao-wpp-hover); }
-
-        /* HERO SECTION */
-        .hero {
-            background-color: var(--cor-primaria);
-            background-image: url('../JM-Fundo.jpg'); /* Referenciando a imagem na raiz do S3 */
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            padding: 60px 0;
-            position: relative;
-            text-align: center;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(75, 36, 54, 0.85); 
-            z-index: 1;
-        }
-        .hero .container { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2; }
-        .hero-logo { max-width: 350px; width: 100%; margin: 0 auto 30px auto; }
-        
-        .hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; color: #ffffff; max-width: 850px;}
-        .hero h1 span { color: var(--cor-dourado); }
-        .hero p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; max-width: 750px; }
-
-        /* DORES */
-        .dores { padding: 80px 0; background-color: #ffffff; text-align: center; }
-        .dores h2 { font-size: 2rem; color: var(--cor-primaria); margin-bottom: 40px; }
-        .grid-dores { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
-        .card-dor { background: var(--cor-fundo); padding: 30px; border-radius: 8px; border-top: 4px solid var(--cor-secundaria); text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .card-dor h3 { color: var(--cor-primaria); margin-bottom: 15px; font-size: 1.3rem; }
-
-        /* SOBRE */
-        .sobre { padding: 80px 0; background-color: var(--cor-primaria); color: #ffffff; }
-        .sobre .container { display: flex; align-items: center; gap: 40px; }
-        .sobre-img { flex: 1; text-align: center; }
-        .sobre-img img { width: 100%; max-width: 350px; border-radius: 8px; border: 2px solid var(--cor-dourado); display: inline-block; }
-        .sobre-content { flex: 1; }
-        .sobre-content h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--cor-dourado); }
-        .sobre-content p { font-size: 1.1rem; margin-bottom: 15px; opacity: 0.9; }
-
-        /* RODAPÉ */
-        footer { background-color: #2A131E; color: #BBBBBB; text-align: center; padding: 30px 20px; font-size: 0.9rem; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .sobre .container { flex-direction: column; text-align: center; }
-            .card-dor { text-align: center; }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
+
+    <div id="header-placeholder"></div>
 
     <section class="hero">
         <div class="container">
@@ -153,5 +72,6 @@
         </div>
     </footer>
 
+    <script src="/js/components.js"></script>
 </body>
 </html>

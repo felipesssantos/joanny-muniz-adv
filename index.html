@@ -11,169 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* =========================================
-           VARIÁVEIS DE CORES (Paleta da Dra. Joanny)
-           ========================================= */
-        :root {
-            --cor-primaria: #4B2436; /* Vinho Escuro */
-            --cor-secundaria: #7E3840; /* Vinho Claro/Avermelhado */
-            --cor-dourado: #CFA461; /* Tom Gold para contrastes */
-            --cor-fundo: #FAFAFA;
-            --cor-texto: #333333;
-            --cor-botao-wpp: #25D366; 
-            --cor-botao-wpp-hover: #1EBE5D;
-        }
-
-        /* Resets e Base */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        /* Tipografia Base: Carmen Sans para textos lidos, Cinzel para títulos */
-        body { 
-            font-family: 'Carmen Sans', sans-serif; 
-            background-color: var(--cor-fundo); 
-            color: var(--cor-texto); 
-            line-height: 1.6; 
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-        }
-
-        img { max-width: 100%; height: auto; display: block; }
-        
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* Botão Global WhatsApp */
-        .btn-wpp {
-            display: inline-block;
-            background-color: var(--cor-botao-wpp);
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Carmen Sans', sans-serif;
-            font-weight: 800;
-            font-size: 1.1rem;
-            padding: 18px 32px;
-            border-radius: 8px;
-            text-align: center;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            width: 100%;
-            max-width: 400px;
-        }
-        .btn-wpp:hover { background-color: var(--cor-botao-wpp-hover); }
-
-        /* =========================================
-           DOBRA 1: HERO SECTION (Atualizada)
-           ========================================= */
-        .hero {
-            background-color: var(--cor-primaria);
-            background-image: url('JM-Fundo.jpg'); /* Textura de fundo */
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            padding: 60px 0;
-            position: relative;
-            text-align: center; /* Centraliza todo o texto */
-        }
-        
-        /* Película escura sobre o fundo para garantir leitura */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(75, 36, 54, 0.85); /* Mistura com a cor primária */
-            z-index: 1;
-        }
-
-        .hero .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Sublogo branca centralizada no topo */
-        .hero-logo { 
-            max-width: 350px; 
-            margin: 0 auto 30px auto; 
-            width: 100%;
-        }
-        
-        .hero h1 { 
-            font-size: 2.5rem; 
-            line-height: 1.2; 
-            margin-bottom: 20px; 
-            color: #ffffff;
-            max-width: 800px;
-        }
-        .hero h1 span { color: var(--cor-dourado); }
-        .hero p { 
-            font-size: 1.2rem; 
-            margin-bottom: 40px; 
-            opacity: 0.9;
-            max-width: 700px;
-        }
-
-        /* =========================================
-           DOBRA 2: DORES
-           ========================================= */
-        .dores { padding: 80px 0; background-color: #ffffff; text-align: center; }
-        .dores h2 { font-size: 2rem; color: var(--cor-primaria); margin-bottom: 40px; }
-        .grid-dores {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        .card-dor {
-            background: var(--cor-fundo);
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 4px solid var(--cor-secundaria);
-            text-align: left;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .card-dor h3 { color: var(--cor-primaria); margin-bottom: 15px; font-size: 1.3rem; }
-
-        /* =========================================
-           DOBRA 3: SOBRE A ADVOGADA
-           ========================================= */
-        .sobre { padding: 80px 0; background-color: var(--cor-primaria); color: #ffffff; }
-        .sobre .container { display: flex; align-items: center; gap: 40px; }
-        .sobre-img { flex: 1; text-align: center; }
-        
-        /* Foto oficial da Dra. Joanny */
-        .sobre-img img { 
-            width: 100%; 
-            max-width: 350px; 
-            border-radius: 8px; 
-            border: 2px solid var(--cor-dourado); 
-            display: inline-block;
-        }
-        
-        .sobre-content { flex: 1; }
-        .sobre-content h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--cor-dourado); }
-        .sobre-content p { font-size: 1.1rem; margin-bottom: 15px; opacity: 0.9; }
-
-        /* =========================================
-           RODAPÉ
-           ========================================= */
-        footer { background-color: #2A131E; color: #BBBBBB; text-align: center; padding: 30px 20px; font-size: 0.9rem; font-family: 'Carmen Sans', sans-serif;}
-        footer p { margin-bottom: 10px; }
-
-        /* Responsividade Mobile */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .sobre .container { flex-direction: column; text-align: center; }
-            .card-dor { text-align: center; }
-            .sobre-img img { max-width: 280px; }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
+
+    <div id="header-placeholder"></div>
 
     <!-- Dobra 1: Hero (Centralizada) -->
     <section class="hero">
@@ -229,13 +71,8 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer>
-        <div class="container">
-            <p>Dra. Joanny Muniz - Advocacia Previdenciária | OAB/XX 000.000</p>
-            <p>Este site não é um produto da Meta, Google ou INSS. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="/js/components.js"></script>
 </body>
 </html>
