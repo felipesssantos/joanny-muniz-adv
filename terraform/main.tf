@@ -1,21 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
-
-# Usando us-east-1 pois é mandatório para certificados ACM no CloudFront futuramente
-provider "aws" {
-  region = "us-east-1"
-}
-
-variable "project_name" {
-  description = "Nome base para os recursos do projeto"
-  default     = "lp-joanny-muniz"
-}
 
 # ==========================================
 # S3 BUCKET (Hospedagem dos Arquivos)
@@ -74,6 +56,8 @@ resource "aws_cloudfront_distribution" "cdn" {
   default_root_object = "index.html"
   price_class         = "PriceClass_100" # Classe mais barata, atende Américas e Europa
 
+  aliases = var.domain_names
+
   origin {
     domain_name              = aws_s3_bucket.site_bucket.bucket_regional_domain_name
     origin_id                = aws_s3_bucket.site_bucket.id
@@ -92,10 +76,18 @@ resource "aws_cloudfront_distribution" "cdn" {
         forward = "none"
       }
     }
-    
+
     min_ttl     = 0
     default_ttl = 3600
     max_ttl     = 86400
+
+    dynamic "function_association" {
+      for_each = var.append_index_function_arn != "" ? [1] : []
+      content {
+        event_type   = "viewer-request"
+        function_arn = var.append_index_function_arn
+      }
+    }
   }
 
   restrictions {
@@ -105,20 +97,9 @@ resource "aws_cloudfront_distribution" "cdn" {
   }
 
   viewer_certificate {
-    # Certificado padrão da AWS gerado automaticamente (*.cloudfront.net)
-    cloudfront_default_certificate = true
-    
-    # Bloco reservado para quando o domínio .adv.br estiver registrado no Route53:
-    # acm_certificate_arn      = aws_acm_certificate.cert.arn
-    # ssl_support_method       = "sni-only"
-    # minimum_protocol_version = "TLSv1.2_2021"
+    acm_certificate_arn            = var.acm_certificate_arn != "" ? var.acm_certificate_arn : null
+    cloudfront_default_certificate = var.acm_certificate_arn == "" ? true : false
+    ssl_support_method             = var.acm_certificate_arn != "" ? "sni-only" : null
+    minimum_protocol_version       = var.acm_certificate_arn != "" ? "TLSv1.2_2021" : "TLSv1"
   }
-}
-
-# ==========================================
-# OUTPUT
-# ==========================================
-output "cloudfront_url" {
-  description = "A URL temporária gerada pelo CloudFront para acessar a Landing Page"
-  value       = aws_cloudfront_distribution.cdn.domain_name
 }

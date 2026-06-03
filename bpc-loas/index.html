@@ -1,179 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dra. Joanny Muniz - Especialista em BPC/LOAS</title>
-    <meta name="description" content="Teve o BPC/LOAS negado pelo INSS? Nós ajudamos você a conseguir o benefício. Atendimento online para todo o Brasil.">
+    <meta name="description" content="Teve o BPC/LOAS negado pelo INSS? NÃ³s ajudamos vocÃª a conseguir o benefÃ­cio. Atendimento online para todo o Brasil.">
     
-    <!-- Pré-carregamento das fontes -->
+    <!-- PrÃ©-carregamento das fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* =========================================
-           VARIÁVEIS DE CORES (Paleta da Dra. Joanny)
-           ========================================= */
-        :root {
-            --cor-primaria: #4B2436; /* Vinho Escuro */
-            --cor-secundaria: #7E3840; /* Vinho Claro/Avermelhado */
-            --cor-dourado: #CFA461; /* Tom Gold para contrastes */
-            --cor-fundo: #FAFAFA;
-            --cor-texto: #333333;
-            --cor-botao-wpp: #25D366; 
-            --cor-botao-wpp-hover: #1EBE5D;
-        }
-
-        /* Resets e Base */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        /* Tipografia Base: Carmen Sans para textos lidos, Cinzel para títulos */
-        body { 
-            font-family: 'Carmen Sans', sans-serif; 
-            background-color: var(--cor-fundo); 
-            color: var(--cor-texto); 
-            line-height: 1.6; 
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-        }
-
-        img { max-width: 100%; height: auto; display: block; }
-        
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* Botão Global WhatsApp */
-        .btn-wpp {
-            display: inline-block;
-            background-color: var(--cor-botao-wpp);
-            color: #ffffff;
-            text-decoration: none;
-            font-family: 'Carmen Sans', sans-serif;
-            font-weight: 800;
-            font-size: 1.1rem;
-            padding: 18px 32px;
-            border-radius: 8px;
-            text-align: center;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            width: 100%;
-            max-width: 400px;
-        }
-        .btn-wpp:hover { background-color: var(--cor-botao-wpp-hover); }
-
-        /* =========================================
-           DOBRA 1: HERO SECTION (Atualizada)
-           ========================================= */
-        .hero {
-            background-color: var(--cor-primaria);
-            background-image: url('JM-Fundo.jpg'); /* Textura de fundo */
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
-            padding: 60px 0;
-            position: relative;
-            text-align: center; /* Centraliza todo o texto */
-        }
-        
-        /* Película escura sobre o fundo para garantir leitura */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(75, 36, 54, 0.85); /* Mistura com a cor primária */
-            z-index: 1;
-        }
-
-        .hero .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Sublogo branca centralizada no topo */
-        .hero-logo { 
-            max-width: 350px; 
-            margin: 0 auto 30px auto; 
-            width: 100%;
-        }
-        
-        .hero h1 { 
-            font-size: 2.5rem; 
-            line-height: 1.2; 
-            margin-bottom: 20px; 
-            color: #ffffff;
-            max-width: 800px;
-        }
-        .hero h1 span { color: var(--cor-dourado); }
-        .hero p { 
-            font-size: 1.2rem; 
-            margin-bottom: 40px; 
-            opacity: 0.9;
-            max-width: 700px;
-        }
-
-        /* =========================================
-           DOBRA 2: DORES
-           ========================================= */
-        .dores { padding: 80px 0; background-color: #ffffff; text-align: center; }
-        .dores h2 { font-size: 2rem; color: var(--cor-primaria); margin-bottom: 40px; }
-        .grid-dores {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        .card-dor {
-            background: var(--cor-fundo);
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 4px solid var(--cor-secundaria);
-            text-align: left;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .card-dor h3 { color: var(--cor-primaria); margin-bottom: 15px; font-size: 1.3rem; }
-
-        /* =========================================
-           DOBRA 3: SOBRE A ADVOGADA
-           ========================================= */
-        .sobre { padding: 80px 0; background-color: var(--cor-primaria); color: #ffffff; }
-        .sobre .container { display: flex; align-items: center; gap: 40px; }
-        .sobre-img { flex: 1; text-align: center; }
-        
-        /* Foto oficial da Dra. Joanny */
-        .sobre-img img { 
-            width: 100%; 
-            max-width: 350px; 
-            border-radius: 8px; 
-            border: 2px solid var(--cor-dourado); 
-            display: inline-block;
-        }
-        
-        .sobre-content { flex: 1; }
-        .sobre-content h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--cor-dourado); }
-        .sobre-content p { font-size: 1.1rem; margin-bottom: 15px; opacity: 0.9; }
-
-        /* =========================================
-           RODAPÉ
-           ========================================= */
-        footer { background-color: #2A131E; color: #BBBBBB; text-align: center; padding: 30px 20px; font-size: 0.9rem; font-family: 'Carmen Sans', sans-serif;}
-        footer p { margin-bottom: 10px; }
-
-        /* Responsividade Mobile */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .sobre .container { flex-direction: column; text-align: center; }
-            .card-dor { text-align: center; }
-            .sobre-img img { max-width: 280px; }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
+
+    <div id="header-placeholder"></div>
 
     <!-- Dobra 1: Hero (Centralizada) -->
     <section class="hero">
@@ -181,10 +23,10 @@
             <!-- Sublogo branca substituindo as imagens antigas -->
             <img src="../JM-Logo-marca-d_agua.png" alt="Dra. Joanny Muniz Logo" class="hero-logo">
             
-            <h1>O INSS negou o seu BPC/LOAS? <span>Você pode estar perdendo 1 salário mínimo mensal.</span></h1>
-            <p>Nós ajudamos idosos e pessoas com deficiência (inclusive autismo) a conseguir o benefício, mesmo que o INSS tenha dito que a renda da família é alta.</p>
+            <h1>O INSS negou o seu BPC/LOAS? <span>VocÃª pode estar perdendo 1 salÃ¡rio mÃ­nimo mensal.</span></h1>
+            <p>NÃ³s ajudamos idosos e pessoas com deficiÃªncia (inclusive autismo) a conseguir o benefÃ­cio, mesmo que o INSS tenha dito que a renda da famÃ­lia Ã© alta.</p>
             
-            <a href="https://wa.me/5571992126570?text=Olá,%20Dra.%20Joanny!%20Vim%20pelo%20site%20e%20preciso%20de%20ajuda%20com%20o%20BPC." class="btn-wpp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5571992126570?text=OlÃ¡,%20Dra.%20Joanny!%20Vim%20pelo%20site%20e%20preciso%20de%20ajuda%20com%20o%20BPC." class="btn-wpp" target="_blank" rel="noopener noreferrer">
                 Quero Analisar Meu Caso Agora
             </a>
         </div>
@@ -193,22 +35,22 @@
     <!-- Dobra 2: Dores mapeadas -->
     <section class="dores">
         <div class="container">
-            <h2>Se o INSS te deu uma dessas desculpas, a Justiça pensa diferente:</h2>
+            <h2>Se o INSS te deu uma dessas desculpas, a JustiÃ§a pensa diferente:</h2>
             <div class="grid-dores">
                 <div class="card-dor">
-                    <h3>"A renda da família passa do limite"</h3>
-                    <p>O INSS exige renda de até 1/4 do salário mínimo, mas a Justiça permite descontar gastos com remédios, fraldas e alimentação especial.</p>
+                    <h3>"A renda da famÃ­lia passa do limite"</h3>
+                    <p>O INSS exige renda de atÃ© 1/4 do salÃ¡rio mÃ­nimo, mas a JustiÃ§a permite descontar gastos com remÃ©dios, fraldas e alimentaÃ§Ã£o especial.</p>
                 </div>
                 <div class="card-dor">
-                    <h3>"Você nunca pagou o INSS"</h3>
-                    <p>Para receber o BPC/LOAS, você NÃO precisa ter contribuído com o INSS em nenhum momento da sua vida. É um benefício puramente assistencial.</p>
+                    <h3>"VocÃª nunca pagou o INSS"</h3>
+                    <p>Para receber o BPC/LOAS, vocÃª NÃƒO precisa ter contribuÃ­do com o INSS em nenhum momento da sua vida. Ã‰ um benefÃ­cio puramente assistencial.</p>
                 </div>
                 <div class="card-dor">
-                    <h3>"O laudo médico não serve"</h3>
-                    <p>Auxiliamos você a reunir a documentação e os laudos médicos corretos para comprovar a deficiência perante o juiz.</p>
+                    <h3>"O laudo mÃ©dico nÃ£o serve"</h3>
+                    <p>Auxiliamos vocÃª a reunir a documentaÃ§Ã£o e os laudos mÃ©dicos corretos para comprovar a deficiÃªncia perante o juiz.</p>
                 </div>
             </div>
-            <a href="https://wa.me/5571992126570?text=Olá,%20Dra.%20Joanny!%20O%20INSS%20negou%20meu%20benefício,%20pode%20me%20ajudar?" class="btn-wpp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5571992126570?text=OlÃ¡,%20Dra.%20Joanny!%20O%20INSS%20negou%20meu%20benefÃ­cio,%20pode%20me%20ajudar?" class="btn-wpp" target="_blank" rel="noopener noreferrer">
                 Falar com a Advogada no WhatsApp
             </a>
         </div>
@@ -223,19 +65,20 @@
             </div>
             <div class="sobre-content">
                 <h2>Dra. Joanny Muniz</h2>
-                <p>Advogada especialista em Direito Previdenciário (OAB/XX 000.000). Atuo exclusivamente para garantir que você não seja prejudicado pela burocracia do INSS.</p>
-                <p>Nosso atendimento é 100% online, seguro e rápido. Você não precisa sair de casa para dar entrada ou recorrer do seu benefício.</p>
+                <p>Advogada especialista em Direito PrevidenciÃ¡rio (OAB/XX 000.000). Atuo exclusivamente para garantir que vocÃª nÃ£o seja prejudicado pela burocracia do INSS.</p>
+                <p>Nosso atendimento Ã© 100% online, seguro e rÃ¡pido. VocÃª nÃ£o precisa sair de casa para dar entrada ou recorrer do seu benefÃ­cio.</p>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé -->
+    <!-- RodapÃ© -->
     <footer>
         <div class="container">
-            <p>Dra. Joanny Muniz - Advocacia Previdenciária | OAB/XX 000.000</p>
-            <p>Este site não é um produto da Meta, Google ou INSS. Todos os direitos reservados.</p>
+            <p>Dra. Joanny Muniz - Advocacia PrevidenciÃ¡ria | OAB/XX 000.000</p>
+            <p>Este site nÃ£o Ã© um produto da Meta, Google ou INSS. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <script src="/js/components.js"></script>
 </body>
 </html>
