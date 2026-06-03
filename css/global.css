@@ -150,7 +150,7 @@ img { max-width: 100%; height: auto; display: block; }
    ========================================= */
 header {
     background-color: rgba(250, 250, 250, 0.95);
-    padding: 15px 0;
+    padding: 10px 0;
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     position: fixed;
     top: 0;
@@ -164,7 +164,7 @@ header {
     align-items: center;
 }
 .header-logo img {
-    max-height: 50px;
+    max-height: 90px;
 }
 .btn-wpp-header {
     background-color: var(--cor-botao-wpp);
