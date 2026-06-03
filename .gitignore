@@ -1,0 +1,29 @@
+# =========================
+# Sistema Operacional
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+
+# =========================
+# Terraform
+# =========================
+# Ignorar o diretório oculto de cache/plugins do terraform
+.terraform/
+
+# Ignorar arquivos de estado locais (embora você esteja usando S3, caso rode sem o backend por engano)
+*.tfstate
+*.tfstate.backup
+
+# Ignorar o arquivo de variáveis (ele pode conter dados sensíveis ou específicos do seu ambiente local)
+terraform.tfvars
+*.tfvars
+
+# Arquivo de crash do Terraform (caso ocorra algum erro grave)
+crash.log
+
+# =========================
+# Outros
+# =========================
+node_modules/
+.env
