@@ -1,0 +1,41 @@
+name: Deploy Landing Pages to S3 and CloudFront
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'terraform/**'
+      - 'README.md'
+      - '.gitignore'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy to S3
+        # O parâmetro --delete garante que arquivos excluídos no repositório sejam excluídos no S3
+        run: |
+          aws s3 sync . s3://lp-joanny-muniz-prod-website \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "terraform/*" \
+            --exclude ".gitignore" \
+            --exclude "README.md"
+
+      - name: Invalidate CloudFront Cache
+        # Invalida o cache do CloudFront para que a borda busque os arquivos novos no S3 instantaneamente
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
