@@ -1,30 +1,114 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dra. Joanny Muniz - Aposentadorias e Planejamento</title>
-    <meta name="description" content="NÃ£o perca dinheiro na sua Aposentadoria. Descubra a regra de transiÃ§Ã£o mais vantajosa e corrija erros do INSS com uma especialista.">
+    <meta name="description" content="Não perca dinheiro na sua Aposentadoria. Descubra a regra de transição mais vantajosa e corrija erros do INSS com uma especialista.">
     
-    <!-- PrÃ©-carregamento das fontes -->
+    <!-- Pré-carregamento das fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Carmen+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/global.css">
+    <style>
+        /* VARIÁVEIS DE CORES */
+        :root {
+            --cor-primaria: #4B2436; 
+            --cor-secundaria: #7E3840; 
+            --cor-dourado: #CFA461; 
+            --cor-fundo: #FAFAFA;
+            --cor-texto: #333333;
+            --cor-botao-wpp: #25D366; 
+            --cor-botao-wpp-hover: #1EBE5D;
+        }
+
+        /* Resets e Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Carmen Sans', sans-serif; background-color: var(--cor-fundo); color: var(--cor-texto); line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; font-weight: 700; }
+        img { max-width: 100%; height: auto; display: block; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Botão Global WhatsApp */
+        .btn-wpp {
+            display: inline-block;
+            background-color: var(--cor-botao-wpp);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 18px 32px;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            width: 100%;
+            max-width: 450px;
+        }
+        .btn-wpp:hover { background-color: var(--cor-botao-wpp-hover); }
+
+        /* HERO SECTION */
+        .hero {
+            background-color: var(--cor-primaria);
+            background-image: url('../JM-Fundo.jpg'); /* Busca a imagem na raiz do S3 */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 60px 0;
+            position: relative;
+            text-align: center;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(75, 36, 54, 0.85); 
+            z-index: 1;
+        }
+        .hero .container { display: flex; flex-direction: column; align-items: center; position: relative; z-index: 2; }
+        .hero-logo { max-width: 350px; width: 100%; margin: 0 auto 30px auto; }
+        
+        .hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 20px; color: #ffffff; max-width: 900px;}
+        .hero h1 span { color: var(--cor-dourado); }
+        .hero p { font-size: 1.2rem; margin-bottom: 40px; opacity: 0.9; max-width: 750px; }
+
+        /* DORES */
+        .dores { padding: 80px 0; background-color: #ffffff; text-align: center; }
+        .dores h2 { font-size: 2rem; color: var(--cor-primaria); margin-bottom: 40px; }
+        .grid-dores { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .card-dor { background: var(--cor-fundo); padding: 30px; border-radius: 8px; border-top: 4px solid var(--cor-secundaria); text-align: left; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .card-dor h3 { color: var(--cor-primaria); margin-bottom: 15px; font-size: 1.3rem; }
+
+        /* SOBRE */
+        .sobre { padding: 80px 0; background-color: var(--cor-primaria); color: #ffffff; }
+        .sobre .container { display: flex; align-items: center; gap: 40px; }
+        .sobre-img { flex: 1; text-align: center; }
+        .sobre-img img { width: 100%; max-width: 350px; border-radius: 8px; border: 2px solid var(--cor-dourado); display: inline-block; }
+        .sobre-content { flex: 1; }
+        .sobre-content h2 { font-size: 2.2rem; margin-bottom: 20px; color: var(--cor-dourado); }
+        .sobre-content p { font-size: 1.1rem; margin-bottom: 15px; opacity: 0.9; }
+
+        /* RODAPÉ */
+        footer { background-color: #2A131E; color: #BBBBBB; text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .sobre .container { flex-direction: column; text-align: center; }
+            .card-dor { text-align: center; }
+        }
+    </style>
 </head>
 <body>
-
-    <div id="header-placeholder"></div>
 
     <section class="hero">
         <div class="container">
             <img src="../JM-Logo-marca-d_agua.png" alt="Dra. Joanny Muniz Logo" class="hero-logo">
             
-            <h1>NÃ£o perca dinheiro na sua Aposentadoria. <span>Descubra a melhor regra e fuja dos erros do INSS.</span></h1>
-            <p>NÃ³s realizamos o seu Planejamento PrevidenciÃ¡rio para garantir que vocÃª nÃ£o trabalhe nenhum dia a mais do que o necessÃ¡rio e receba o maior benefÃ­cio possÃ­vel.</p>
+            <h1>Não perca dinheiro na sua Aposentadoria. <span>Descubra a melhor regra e fuja dos erros do INSS.</span></h1>
+            <p>Nós realizamos o seu Planejamento Previdenciário para garantir que você não trabalhe nenhum dia a mais do que o necessário e receba o maior benefício possível.</p>
             
-            <a href="https://wa.me/5571992126570?text=OlÃ¡,%20Dra.%20Joanny!%20Gostaria%20de%20fazer%20uma%20anÃ¡lise%20sobre%20a%20minha%20aposentadoria." class="btn-wpp" target="_blank">
+            <a href="https://wa.me/5571992126570?text=Olá,%20Dra.%20Joanny!%20Gostaria%20de%20fazer%20uma%20análise%20sobre%20a%20minha%20aposentadoria." class="btn-wpp" target="_blank">
                 Simular Minha Aposentadoria Agora
             </a>
         </div>
@@ -32,22 +116,22 @@
 
     <section class="dores">
         <div class="container">
-            <h2>Cuidado: O INSS costuma errar no cÃ¡lculo do seu benefÃ­cio nestes casos:</h2>
+            <h2>Cuidado: O INSS costuma errar no cálculo do seu benefício nestes casos:</h2>
             <div class="grid-dores">
                 <div class="card-dor">
                     <h3>Trabalho Especial (Insalubridade)</h3>
-                    <p>Profissionais como enfermeiros, mÃ©dicos, vigilantes e metalÃºrgicos tÃªm direito a uma contagem de tempo mais rÃ¡pida. O INSS frequentemente ignora os laudos (PPP) e reduz o valor.</p>
+                    <p>Profissionais como enfermeiros, médicos, vigilantes e metalúrgicos têm direito a uma contagem de tempo mais rápida. O INSS frequentemente ignora os laudos (PPP) e reduz o valor.</p>
                 </div>
                 <div class="card-dor">
-                    <h3>Tempo nÃ£o registrado no sistema</h3>
-                    <p>PerÃ­odos trabalhados em empresas que fecharam, vÃ­nculos antigos de carteira assinada ou trabalho rural costumam nÃ£o aparecer no seu CNIS. NÃ³s exigimos essa correÃ§Ã£o.</p>
+                    <h3>Tempo não registrado no sistema</h3>
+                    <p>Períodos trabalhados em empresas que fecharam, vínculos antigos de carteira assinada ou trabalho rural costumam não aparecer no seu CNIS. Nós exigimos essa correção.</p>
                 </div>
                 <div class="card-dor">
                     <h3>O "Simulador" do aplicativo mente</h3>
-                    <p>Nunca confie na simulaÃ§Ã£o automÃ¡tica do aplicativo 'Meu INSS'. Ele nÃ£o analisa regras de transiÃ§Ã£o favorÃ¡veis e nÃ£o contabiliza direitos que sÃ³ um advogado consegue identificar.</p>
+                    <p>Nunca confie na simulação automática do aplicativo 'Meu INSS'. Ele não analisa regras de transição favoráveis e não contabiliza direitos que só um advogado consegue identificar.</p>
                 </div>
             </div>
-            <a href="https://wa.me/5571992126570?text=OlÃ¡,%20Dra.%20Joanny!%20Li%20as%20informaÃ§Ãµes%20no%20site%20e%20quero%20falar%20sobre%20meu%20tempo%20de%20contribuiÃ§Ã£o." class="btn-wpp" target="_blank">
+            <a href="https://wa.me/5571992126570?text=Olá,%20Dra.%20Joanny!%20Li%20as%20informações%20no%20site%20e%20quero%20falar%20sobre%20meu%20tempo%20de%20contribuição." class="btn-wpp" target="_blank">
                 Falar com a Advogada no WhatsApp
             </a>
         </div>
@@ -60,19 +144,18 @@
             </div>
             <div class="sobre-content">
                 <h2>Dra. Joanny Muniz</h2>
-                <p>Advogada especialista em Direito PrevidenciÃ¡rio (OAB/XX 000.000). Com atendimento humanizado, luto diariamente para que os trabalhadores recebam cada centavo que contribuÃ­ram ao longo da vida.</p>
-                <p>Nosso atendimento Ã© 100% online para todo o Brasil. VocÃª recebe todo o suporte e planejamento sem precisar sair do conforto da sua casa ou enfrentar filas nas agÃªncias.</p>
+                <p>Advogada especialista em Direito Previdenciário (OAB/XX 000.000). Com atendimento humanizado, luto diariamente para que os trabalhadores recebam cada centavo que contribuíram ao longo da vida.</p>
+                <p>Nosso atendimento é 100% online para todo o Brasil. Você recebe todo o suporte e planejamento sem precisar sair do conforto da sua casa ou enfrentar filas nas agências.</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>Dra. Joanny Muniz - Advocacia PrevidenciÃ¡ria | OAB/XX 000.000</p>
-            <p>Este site nÃ£o Ã© um produto da Meta, Google ou INSS. Todos os direitos reservados.</p>
+            <p>Dra. Joanny Muniz - Advocacia Previdenciária | OAB/XX 000.000</p>
+            <p>Este site não é um produto da Meta, Google ou INSS. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <script src="/js/components.js"></script>
 </body>
 </html>
