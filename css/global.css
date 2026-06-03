@@ -163,6 +163,9 @@ header img {
 
 footer { background-color: #2A131E; color: #BBBBBB; text-align: center; padding: 30px 20px; font-size: 0.9rem; font-family: 'Carmen Sans', sans-serif;}
 footer p { margin-bottom: 10px; }
+.social-links { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
+.social-links a { color: var(--cor-dourado); transition: color 0.3s, transform 0.3s; display: inline-block; }
+.social-links a:hover { color: #ffffff; transform: translateY(-3px); }
 
 /* Responsividade Mobile */
 @media (max-width: 768px) {
