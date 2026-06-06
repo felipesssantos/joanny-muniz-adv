@@ -226,6 +226,70 @@ footer p { margin-bottom: 10px; }
 .social-links a { color: var(--cor-dourado); transition: color 0.3s, transform 0.3s; display: inline-block; }
 .social-links a:hover { color: #ffffff; transform: translateY(-3px); }
 
+/* =========================================
+   SEÇÃO COMO FUNCIONA (PASSOS)
+   ========================================= */
+.passos { padding: 80px 0; background-color: var(--cor-fundo); text-align: center; }
+.passos h2 { font-size: 2rem; color: var(--cor-primaria); margin-bottom: 40px; }
+.grid-passos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.card-passo {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    position: relative;
+}
+.passo-numero {
+    background-color: var(--cor-dourado);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 auto 20px auto;
+}
+.card-passo h3 { color: var(--cor-primaria); margin-bottom: 10px; font-size: 1.2rem; }
+
+/* =========================================
+   SEÇÃO FAQ (PERGUNTAS FREQUENTES)
+   ========================================= */
+.faq { padding: 80px 0; background-color: #ffffff; }
+.faq h2 { font-size: 2rem; color: var(--cor-primaria); margin-bottom: 40px; text-align: center; }
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.faq-item {
+    background: var(--cor-fundo);
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--cor-dourado);
+}
+.faq-pergunta {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+.faq-resposta {
+    font-size: 1rem;
+    color: var(--cor-texto);
+    opacity: 0.9;
+}
+
 /* Responsividade Mobile */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2rem; }
