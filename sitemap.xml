@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://joannymuniz.adv.br/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://joannymuniz.adv.br/aposentadoria/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://joannymuniz.adv.br/bpc-loas/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://joannymuniz.adv.br/salario-maternidade/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://joannymuniz.adv.br/salario-maternidade-rural/</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
